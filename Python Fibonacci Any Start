@@ -1,0 +1,37 @@
+
+# David Blenkinsop May 2, 2017
+# A standard Fibonacci sequence generating, say, 8 numbers, might be 0 1 1 2 3 5 8 13
+
+# Generalizing a bit, I can have the program ask for user input of the first two numbers
+# to kick off an additive sequence, and then generate the 8 numbers, that follow from the two number input.
+# So, for instance, if the first two numbers are 0 and 1, you get the above sequence.
+
+def fibonacci(inp1, inp2, x):
+    sequence_list = []
+    
+    current = inp1
+    next = inp2
+    
+    for i in range (x):
+    
+        sequence_list.append(current)
+        current = next
+        next = sequence_list[i] + current
+   
+    return sequence_list    
+    
+
+# function to produce a printed out fibonacci sequence
+def print_fibonacci(inp1, inp2, x):
+    print (str(fibonacci(inp1, inp2, x)))
+    
+# Now,the main program run asks for two inputs and prints a sequence in response to the inputs
+# The number of sequence numbers to generate is left here as a direct argument to
+# specify in the main print statement, '8' numbers, say.
+
+inp1 = int(input("Enter a number: "))
+inp2 = int(input("Enter another number: "))
+
+print (print_fibonacci (inp1, inp2, 8))
+
+
